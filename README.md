@@ -5,6 +5,12 @@ A small extension for VSCode that adds a status bar item for Google Play Music, 
 * Node
 * Visual Studio: Code
 
+## Running
+1. Clone repo
+2. ```cd GPMDP-VSCode-extension```
+3. ```code .```
+4. Press Debug in VSCode
+
 ## Screenshot
 --------------
 ![screenshot](./demo_picture.png)
