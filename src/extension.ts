@@ -24,19 +24,13 @@ interface GPMDPData {
 }
 
 export function activate(context: ExtensionContext) {
-    console.log("controller ready");
-
     let mc = new MusicController();
     setInterval(mc.updateStatusBar.bind(mc), 1000);
-
 }
 
 class MusicController {
     private _statusBarItem: StatusBarItem = window.createStatusBarItem(StatusBarAlignment.Left, 10);
     private _songData?: GPMDPData;
-
-    private progressDone: String = "-"
-    private progressNotDone: String = "~";
 
     public constructor() {
         this.updateStatusBar();
@@ -51,9 +45,9 @@ class MusicController {
         let currentTime = Math.floor((this._songData.time.current / 60000)) + ":" + Math.round(((this._songData.time.current % 60000) / 1000));
         let totaltime = Math.floor((this._songData.time.total / 60000)) + ":" + Math.round(((this._songData.time.total % 60000) / 1000));
 
-        let playPause = this._songData.playing ? "$(octicon-triangle-right)" : "$(octicon-primitive-square)";
+        let playPause = this._songData.playing ? "$(triangle-right)" : "$(primitive-square)";
         let songtitle = this._songData.song.title + " : " + this._songData.song.artist;
-        let progress = "$(octicon-triangle-right) ["+currentTime+" / "+totaltime+"]";
+        let progress = " ["+currentTime+" / "+totaltime+"]";
 
         this._statusBarItem.text = playPause + " " + songtitle + " " + progress;
     }
@@ -63,7 +57,6 @@ class MusicController {
     }
 
     dispose() {
-        console.log("dispose");
         this._statusBarItem.dispose();
     }
 }
