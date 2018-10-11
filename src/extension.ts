@@ -4,10 +4,10 @@ import {readFileSync} from 'fs';
 interface GPMDPData {
     playing: boolean,
     song: {
-        title: String,
-        artist: String,
-        album: String,
-        albumArt: String
+        title: string,
+        artist: string,
+        album: string,
+        albumArt: string
     },
     rating: {
         liked: boolean,
@@ -17,10 +17,10 @@ interface GPMDPData {
         current: number,
         total: number
     },
-    songLyrics: String,
+    songLyrics: string,
     volume?: number,
-    shuffle?: String,
-    repeat?: String
+    shuffle?: string,
+    repeat?: string
 }
 
 export function activate(context: ExtensionContext) {
