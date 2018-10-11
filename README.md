@@ -5,6 +5,14 @@ A small extension for VSCode that adds a status bar item for Google Play Music, 
 * Node
 * Visual Studio: Code
 
+## Todo
+1. Number formatting on time
+2. Pause, Play, stop, shuffle, etc controls
+
+## Nice to haves
+* read from Google Chrome version
+* embed a GPM player in VSCode?
+
 ## Running
 1. Clone repo
 2. ```cd GPMDP-VSCode-extension```
