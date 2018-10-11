@@ -52,8 +52,13 @@ class MusicController {
         this._statusBarItem.text = playPause + " " + songtitle + " " + progress;
     }
 
-    private getSongData(): GPMDPData {
-        return JSON.parse(readFileSync(process.env.APPDATA + "\\Google Play Music Desktop Player\\json_store\\playback.json").toString());
+    private getSongData(): GPMDPData | undefined {
+        try {
+            return JSON.parse(readFileSync(process.env.APPDATA + "\\Google Play Music Desktop Player\\json_store\\playback.json").toString());
+        } catch (e) {
+            console.log(e)
+            return undefined;
+        }
     }
 
     dispose() {
