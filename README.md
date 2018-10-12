@@ -8,6 +8,7 @@ A small extension for VSCode that adds a status bar item for Google Play Music, 
 ## Todo
 1. Number formatting on time
 2. Pause, Play, stop, shuffle, etc controls
+3. Connect to GPMDP without pin code
 
 ## Nice to haves
 * read from Google Chrome version
@@ -20,5 +21,4 @@ A small extension for VSCode that adds a status bar item for Google Play Music, 
 4. Press Debug in VSCode
 
 ## Screenshot
---------------
 ![screenshot](./demo_picture.png)
