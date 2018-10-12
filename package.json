@@ -17,8 +17,20 @@
     "contributes": {
         "commands": [
             {
-                "command": "extension.sayHello",
-                "title": "Hello World"
+                "command": "player.pause",
+                "title": "Pause Music"
+            },
+            {
+                "command": "plater.play",
+                "title": "Play Music"
+            },
+            {
+                "command": "player.skip",
+                "title": "Skip Song"
+            },
+            {
+                "command": "player.pair",
+                "title": "Pair Player"
             }
         ]
     },
