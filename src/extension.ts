@@ -1,27 +1,8 @@
 import {window, StatusBarAlignment, StatusBarItem, ExtensionContext} from 'vscode';
 import {readFileSync} from 'fs';
+//Custom imports
+import GPMDPData from './interfaces/gpmdpdata';
 
-interface GPMDPData {
-    playing: boolean,
-    song: {
-        title: string,
-        artist: string,
-        album: string,
-        albumArt: string
-    },
-    rating: {
-        liked: boolean,
-        disliked: boolean
-    },
-    time: {
-        current: number,
-        total: number
-    },
-    songLyrics: string,
-    volume?: number,
-    shuffle?: string,
-    repeat?: string
-}
 
 export function activate(context: ExtensionContext) {
     let mc = new MusicController();
@@ -37,6 +18,7 @@ class MusicController {
         this._statusBarItem.show();
     }
 
+    // Take data from object and format it for StatusBar
     public updateStatusBar() {
         this._songData = this.getSongData();
         if (!this._songData)
@@ -52,6 +34,7 @@ class MusicController {
         this._statusBarItem.text = playPause + " " + songtitle + " " + progress;
     }
 
+    // Read JSON file store don system
     private getSongData(): GPMDPData | undefined {
         try {
             return JSON.parse(readFileSync(process.env.APPDATA + "\\Google Play Music Desktop Player\\json_store\\playback.json").toString());
